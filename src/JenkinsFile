@@ -1,0 +1,21 @@
+pipeline {
+    agent any 
+    stages {
+        stage('编译解决方案') {
+            steps {
+                echo '恢复项目引用'
+                echo '编译' 
+            }
+        }
+        stage('运行单元测试') {
+            steps {
+                echo 'Hello world2!' 
+            }
+        }      
+        stage('生成docker镜像') {
+            steps {
+                echo 'Hello world2!' 
+            }
+        }      
+    }
+}
