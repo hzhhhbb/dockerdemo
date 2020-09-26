@@ -14,7 +14,8 @@ pipeline {
         }      
         stage('生成docker镜像') {
             steps {
-                echo 'Hello world2!' 
+                echo '生成docker image'
+                 sh "docker build -t dockerdemo:${BUILD_NUMBER} -f src/" 
             }
         }      
     }
