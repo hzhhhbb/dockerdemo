@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('编译解决方案') {
             steps {
-                echo '恢复项目引用'
-                echo '编译' 
+               sh 'cd src'
+               sh 'dotnet build DockerDemo.sln'
             }
         }
         stage('运行单元测试') {
