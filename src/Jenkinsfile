@@ -3,13 +3,12 @@ pipeline {
     stages {
         stage('编译解决方案') {
             steps {
-               sh 'cd src'
-               sh 'dotnet build DockerDemo.sln'
+               sh 'dotnet build src/DockerDemo.sln'
             }
         }
         stage('运行单元测试') {
             steps {
-                echo 'Hello world2!' 
+                sh 'dotnet test src/'
             }
         }      
         stage('生成docker镜像') {
