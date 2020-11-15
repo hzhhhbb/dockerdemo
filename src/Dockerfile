@@ -1,11 +1,11 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM registry.cn-shenzhen.aliyuncs.com/dotnetcore-vincent/aspnet:3.1-buster-slim AS base
+FROM registry.cn-shenzhen.aliyuncs.com/dotnet-vincent/aspnet:5.0-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM registry.cn-shenzhen.aliyuncs.com/dotnetcore-vincent/sdk:3.1-buster AS build
+FROM registry.cn-shenzhen.aliyuncs.com/dotnet-vincent/sdk:5.0 AS build
 WORKDIR /src
 COPY ["DockerDemo/DockerDemo.csproj", "DockerDemo/"]
 RUN dotnet restore "DockerDemo/DockerDemo.csproj"
